@@ -3,10 +3,10 @@ import pathlib
 import os
 import pandas as pd
 
-TEMPLATE_PATH = pathlib.Path("template.json")
-TEMPLATE_PATH_2 = pathlib.Path("template2.json")
+TEMPLATE_PATH = pathlib.Path("tabula_template/template.json")
+TEMPLATE_PATH_2 = pathlib.Path("tabula_template/template2.json")
 PDF_PATH = pathlib.Path("./statistics")
-CSV_PATH = pathlib.Path("./csv")
+CSV_PATH = pathlib.Path("./csv/statistics")
 ERROR_FILE = pathlib.Path("error.txt")
 
 CSV_PATH.mkdir(parents=True, exist_ok=True)
@@ -14,7 +14,6 @@ CSV_PATH.mkdir(parents=True, exist_ok=True)
 def pdf_to_csv(input_path):
     def parse_to_csv(input_path, template_path, length):
         dfs = tabula.read_pdf_with_template(input_path = pdf_path, template_path = template_path)
-        print("Hit")
         if length == 1:
             df1 = dfs[0]
 
@@ -50,7 +49,7 @@ def pdf_to_csv(input_path):
             raise Exception()
 
 
-        df_final.to_csv(CSV_PATH / input_path.with_suffix(".pdf").name, index=False)
+        df_final.to_csv(CSV_PATH / input_path.with_suffix(".csv").name, index=False)
 
     print(f"Now parsing {input_path.name}")
     try:
