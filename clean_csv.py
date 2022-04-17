@@ -10,11 +10,11 @@ OUTPUT_PATH = Path("./csv/clean")
 OUTPUT_PATH.mkdir(parents=True, exist_ok=True)
 
 # Fix one particular csv
-# problem_csv = "csv\statistics\Cambridge A Level results statistics - November 2017 (PDF, 96KB).csv"
-# df = pd.read_csv(problem_csv)
-# df.columns = df.columns.str.replace("ungrade", "ungraded")
-# df = df.drop('ungra', axis=1)
-# df.to_csv(problem_csv, index=False)
+problem_csv = "csv\statistics\Cambridge A Level results statistics - November 2017 (PDF, 96KB).csv"
+df = pd.read_csv(problem_csv)
+df.columns = df.columns.str.replace("ungrade", "ungraded")
+df = df.drop('ungra', axis=1)
+df.to_csv(problem_csv, index=False)
 
 
 as_payload = {}
