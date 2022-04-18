@@ -8,11 +8,11 @@ Scripts
 - `pdf_to_csv_stat.py` converts the PDF files related to statistics stored in `PDF_PATH` (Stored as constant at the beginning of the script) to CSV files, using Tabula. It will print a preview of the resulting CSV file to the console for checking. If all available Tabula templates fail to extract data correctly, it will write the file name to `error.txt`. You will need to do the convertion manually using Tabula application.
 - `clean_csv_stat.py` combines statistics CSV files of all exam series into a single CSV file. 
 
+Various constants such as output path and website link are declared at the beginning of each script. You can change the values before running the script.
+
 Notebook
 --------
 - `A_Level_Stats_Analysis.ipynb` contains exploratory data analysis on statistics data.
-
-Various constants such as output path and website link are declared at the beginning of each script. You can change the values before running the script.
 
 Data
 ---
